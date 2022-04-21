@@ -10,7 +10,7 @@ author1 = Author("Patrick", "Rothfuss")
 author_repository.save(author1)
 print(f"{author1.first_name} {author1.last_name} has an id of {author1.id}")
 
-author2 = Author("N.K", "Jemisin")
+author2 = Author("N.K.", "Jemisin")
 author_repository.save(author2)
 print(f"{author2.first_name} {author2.last_name} has an id of {author2.id}")
 

@@ -4,7 +4,7 @@
         <p>Title: {{ book.title }}</p>
         <p>Author: {{ book.author.last_name }}, {{ book.author.first_name }}</p>
         <p>
-            <form class="editing_form" action="/books/{{book.id}}/edit" method="POST">
+            <form class="editing_form" action="/books/{{book.id}}/edit" method="GET">
             <button>Edit book details</button>
             </form>
         </p>

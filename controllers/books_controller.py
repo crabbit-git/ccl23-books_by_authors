@@ -7,13 +7,17 @@ books_blueprint = Blueprint("books", __name__)
 
 @books_blueprint.route("/books")
 def books():
-    all_books = book_repository.select_all()
-    return render_template("books/index.html", books = all_books)
+    return render_template(
+        "books/index.html",
+        books = book_repository.select_all()
+        )
 
 @books_blueprint.route("/books/add", methods=['GET'])
 def add_book():
-    all_authors = author_repository.select_all()
-    return render_template("books/add.html", authors = all_authors)
+    return render_template(
+        "books/add.html",
+        authors = author_repository.select_all()
+        )
 
 @books_blueprint.route("/books", methods=['POST'])
 def construct_book():
@@ -25,14 +29,18 @@ def construct_book():
 
 @books_blueprint.route("/books/<id>", methods=['GET'])
 def book_details(id):
-    selected_book = book_repository.select(id)
-    return render_template("books/detail.html", book = selected_book)
+    return render_template(
+        "books/detail.html",
+        book = book_repository.select(id)
+        )
 
 @books_blueprint.route("/books/<id>/edit", methods=['GET'])
 def edit_book(id):
-    selected_book = book_repository.select(id)
-    all_authors = author_repository.select_all()
-    return render_template("books/edit.html", book = selected_book, authors = all_authors)
+    return render_template(
+        "books/edit.html",
+        book = book_repository.select(id),
+        authors = author_repository.select_all()
+        )
 
 @books_blueprint.route("/books/<id>", methods=['POST'])
 def update_book(id):

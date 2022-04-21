@@ -1,17 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
     
-{% for book in all_books %}
+{% for book in books %}
     <div class="book">
         <div class="content">
-            {{ book.author.first_name }} {{ book.author.last_name }}
+            {{ book.author.first_name }} {{ book.author.last_name }}:
             <a href="/books/{{book.id}}">{{ book.title }}</a>
         </div>
-        <!-- <div class="buttons">
-            <form class="deletion_form" action="/books/          book.id          /delete" method="POST">
-
-            </form>
-        </div> -->
     </div>
 {% endfor %}
 {% endblock content %}

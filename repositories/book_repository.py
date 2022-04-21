@@ -57,7 +57,6 @@ def delete_all():
     run_sql(sql)
 
 def update(book):
-    book = None
     sql = """
     UPDATE books
     SET (title, author_id) = (%s, %s)

@@ -1,4 +1,5 @@
-from flask import Flask, Blueprint, render_template, redirect, request
+from flask import Blueprint, render_template, redirect, request
+
 import repositories.author_repository as author_repository
 import repositories.book_repository as book_repository
 from models.book import Book

@@ -17,6 +17,17 @@
                     </option>
                 {% endfor %}
             </select>
+            <!--
+                The main problem with the above is that you can only add books
+                by authors already in the database. I thought I might be able
+                to make one of the options "New" and then have a text input to
+                the side to free type in a new author name (using the save method
+                in author_repository) but it seems this is actually rather complex
+                and not actually possible with HTML alone; every solution I can
+                find so far suggests using Javascript or similar, which is out of
+                scope for this exercise. For now, I'm just leaving it like this,
+                but it's obviously a bit crap and wouldn't really be appropriate.
+            -->
         </div>
         <button type="submit">Submit updated details</button>
     </form>

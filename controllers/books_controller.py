@@ -47,7 +47,7 @@ def edit_book(id):
 def update_book(id):
     title = request.form['title']
     author = author_repository.select(request.form['author_id'])
-    book = Book(title, author)
+    book = Book(title, author, id)
     book_repository.update(book)
     return redirect("/books")
 
